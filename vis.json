@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Sample Vega-Lite Chart",
+  "title": "The Long Road Ahead",
   "data": {
     "values": [
       { "category": "A", "value": 12 },
@@ -16,7 +16,7 @@
   "mark": {
     "type": "bar",
     "cornerRadius": 6,
-    "color": "#4f9cf9"
+    "color": "#2a9d8f"
   },
   "encoding": {
     "x": {
@@ -26,7 +26,8 @@
       "axis": {
         "labelColor": "#c0c0c0",
         "titleColor": "#e0e0e0",
-        "domainColor": "rgba(255,255,255,0.1)"
+        "domainColor": "rgba(255,255,255,0.1)",
+        "labelAngle": -90
       }
     },
     "y": {
