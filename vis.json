@@ -13,9 +13,32 @@
       { "category": "H", "value": 28 }
     ]
   },
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "cornerRadius": 6,
+    "color": "#4f9cf9"
+  },
   "encoding": {
-    "x": { "field": "category", "type": "nominal", "title": "Category" },
-    "y": { "field": "value", "type": "quantitative", "title": "Value" }
+    "x": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Category",
+      "axis": {
+        "labelColor": "#c0c0c0",
+        "titleColor": "#e0e0e0",
+        "domainColor": "rgba(255,255,255,0.1)"
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Value",
+      "axis": {
+        "labelColor": "#c0c0c0",
+        "titleColor": "#e0e0e0",
+        "domainColor": "rgba(255,255,255,0.1)",
+        "gridColor": "rgba(255,255,255,0.06)"
+      }
+    }
   }
 }
