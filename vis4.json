@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "The Fracture",
+  "data": {
+    "values": [
+      { "side": "Us", "cohesion": 80 },
+      { "side": "Them", "cohesion": 75 },
+      { "side": "Middle", "cohesion": 25 },
+      { "side": "Us", "trust": 60 },
+      { "side": "Them", "trust": 45 },
+      { "side": "Middle", "trust": 30 }
+    ]
+  },
+  "mark": { "type": "bar", "cornerRadius": 6, "color": "#264653" },
+  "encoding": {
+    "x": {
+      "field": "side",
+      "type": "nominal",
+      "title": "Side",
+      "axis": { "labelColor": "#c0c0c0", "titleColor": "#e0e0e0", "domainColor": "rgba(255,255,255,0.1)" }
+    },
+    "y": {
+      "field": "cohesion",
+      "type": "quantitative",
+      "title": "Cohesion / Trust",
+      "scale": { "domain": [0, 100] },
+      "axis": { "labelColor": "#c0c0c0", "titleColor": "#e0e0e0", "domainColor": "rgba(255,255,255,0.06)", "gridColor": "rgba(255,255,255,0.06)" }
+    },
+    "color": { "field": "metric", "type": "nominal", "scale": { "range": ["#264653", "#e76f51"] } }
+  }
+}

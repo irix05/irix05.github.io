@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "The Reckoning",
+  "data": {
+    "values": [
+      { "phase": "Confront", "resolve": 40 },
+      { "phase": "Collapse", "resolve": 20 },
+      { "phase": "Doubt", "resolve": 35 },
+      { "phase": "Silence", "resolve": 55 },
+      { "phase": "Release", "resolve": 85 },
+      { "phase": "Begin", "resolve": 90 }
+    ]
+  },
+  "mark": { "type": "bar", "cornerRadius": 6, "color": "#2a9d8f" },
+  "encoding": {
+    "x": {
+      "field": "phase",
+      "type": "nominal",
+      "title": "Phase",
+      "axis": { "labelColor": "#c0c0c0", "titleColor": "#e0e0e0", "domainColor": "rgba(255,255,255,0.1)" }
+    },
+    "y": {
+      "field": "resolve",
+      "type": "quantitative",
+      "title": "Resolution",
+      "scale": { "domain": [0, 100] },
+      "axis": { "labelColor": "#c0c0c0", "titleColor": "#e0e0e0", "domainColor": "rgba(255,255,255,0.06)", "gridColor": "rgba(255,255,255,0.06)" }
+    }
+  }
+}

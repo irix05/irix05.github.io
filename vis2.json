@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "The Divide",
+  "data": {
+    "values": [
+      { "group": "Hope", "value": 75 },
+      { "group": "Fear", "value": 60 },
+      { "group": "Anger", "value": 85 },
+      { "group": "Resentment", "value": 90 },
+      { "group": "Calm", "value": 35 },
+      { "group": "Grief", "value": 70 }
+    ]
+  },
+  "mark": { "type": "bar", "cornerRadius": 6, "color": "#e76f51" },
+  "encoding": {
+    "x": {
+      "field": "group",
+      "type": "nominal",
+      "title": "Emotion",
+      "axis": { "labelColor": "#c0c0c0", "titleColor": "#e0e0e0", "domainColor": "rgba(255,255,255,0.1)" }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Intensity",
+      "scale": { "domain": [0, 100] },
+      "axis": { "labelColor": "#c0c0c0", "titleColor": "#e0e0e0", "domainColor": "rgba(255,255,255,0.06)", "gridColor": "rgba(255,255,255,0.06)" }
+    }
+  }
+}

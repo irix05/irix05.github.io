@@ -30,30 +30,84 @@
     .subtitle {
       color: #9ca3af;
       font-size: 0.95rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
-    #vis {
-      width: 50%;
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .viz-block {
+      width: 80%;
+      max-width: 760px;
+      margin-bottom: 3.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 14px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      padding: 2rem 1.5rem 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+    .viz-block h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 0 0 1rem;
+      color: #d0d0d0;
+      text-align: center;
+    }
+    .chart {
+      width: 100%;
+      height: 320px;
+      margin-bottom: 1.2rem;
+    }
+    .story {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #b8b8c0;
+      margin: 0;
+      text-align: justify;
     }
     @media (max-width: 768px) {
-      #vis { width: 90%; }
+      .viz-block { width: 92%; padding: 1.2rem; }
+      .chart { height: 260px; }
     }
   </style>
 </head>
 <body>
   <h1>irix05.github.io</h1>
   <p class="subtitle">Data Visualization</p>
-  <div id="vis"></div>
+  <section class="viz-block">
+    <h2>The Awakening</h2>
+    <div class="chart" id="chart1"></div>
+    <p class="story">It began not with a bang, but with a quiet erosion of certainty. For years the world had moved in straight lines, predictable and safe. Then came the questions, small at first, like pebbles dropped into still water. Each ripple spread wider than the last, until the surface of everything we thought we knew was broken into a thousand shimmering fragments. We stood on the shore, watching our reflections scatter, unsure whether to mourn what was lost or to marvel at what was finally visible beneath the waves.</p>
+  </section>
+  <section class="viz-block">
+    <h2>The Divide</h2>
+    <div class="chart" id="chart2"></div>
+    <p class="story">What followed was not a clean break but a slow, grinding fracture. Hope clung to the edges like a dying ember, while fear and anger burned hotter with each passing day. Resentment became the loudest voice in the room, drowning out the quieter sentiments that had once held us together. It was a strange grief, to watch something you loved turn into a battleground, to see the same history read in two completely different languages. We were all speaking, but none of us were listening anymore.</p>
+  </section>
+  <section class="viz-block">
+    <h2>The Gathering Storm</h2>
+    <div class="chart" id="chart3"></div>
+    <p class="story">The years stacked upon each other like kindling, each one drier than the last. By 2020 the air itself felt charged, thick with unspoken words and half-finished arguments. 2021 brought a clarity that was almost violent in its simplicity: there was no middle ground left to stand on. The pressure built not from any single event but from the weight of everything left unsaid, everything left unresolved. We were a house with the walls closing in, and still we pretended the windows were open.</p>
+  </section>
+  <section class="viz-block">
+    <h2>The Fracture</h2>
+    <div class="chart" id="chart4"></div>
+    <p class="story">When the fault line finally split, it did so along familiar borders. Us and them, we and they, the sides we had drawn in the sand since childhood. What hurt most was not the rupture itself but how predictable it felt. The middle, that fragile space where understanding used to live, collapsed into dust. Trust, once the glue of everything, became the first thing we rationed. We built new walls from the rubble of the old ones, taller and thicker, and called it safety. The silence between us was no longer empty; it was full of everything we had lost.</p>
+  </section>
+  <section class="viz-block">
+    <h2>The Reckoning</h2>
+    <div class="chart" id="chart5"></div>
+    <p class="story">Confrontation came, as it always does, dressed as a solution. But collapse followed quickly, and with it the strange clarity of rock bottom. There was no grand epiphany, just the slow realization that silence, too, is a choice. Release came not as forgiveness but as exhaustion, the simple decision to stop carrying what could not be mended. And in that letting go, something shifted. Begin is not a promise, not yet. It is merely the first honest breath after a long time of holding it. The line on the chart rises, not because the past is forgotten, but because the future is finally worth looking at again.</p>
+  </section>
   <script>
-    fetch("vis.json")
-      .then(response => response.json())
-      .then(spec => vegaEmbed("#vis", spec, { actions: false }));
+    const charts = [
+      { id: "chart1", file: "vis1.json" },
+      { id: "chart2", file: "vis2.json" },
+      { id: "chart3", file: "vis3.json" },
+      { id: "chart4", file: "vis4.json" },
+      { id: "chart5", file: "vis5.json" }
+    ];
+    charts.forEach(({ id, file }) => {
+      fetch(file)
+        .then(r => r.json())
+        .then(spec => vegaEmbed("#" + id, spec, { actions: false }));
+    });
   </script>
 </body>
 </html>
